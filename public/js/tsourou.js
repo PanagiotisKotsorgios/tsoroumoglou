@@ -102,11 +102,11 @@
 
   /* Keep catalogue imagery aligned with the commercial-vehicle focus. */
   var truckImageByAlt = {
-    'Ενδεικτική εικόνα βαρέος φορτηγού': 'img/hero-fleet.png',
-    'Ενδεικτική εικόνα επαγγελματικού οχήματος': 'img/about.jpg',
-    'Ενδεικτική εικόνα τράκτορα': 'img/about.jpg',
-    'Ενδεικτική εικόνα επικαθήμενου': 'img/hero-fleet.png',
-    'Ενδεικτική εικόνα μηχανήματος έργου': 'img/hero-fleet.png'
+    'Ενδεικτική εικόνα βαρέος φορτηγού': 'img/company/company-02.jpg',
+    'Ενδεικτική εικόνα επαγγελματικού οχήματος': 'img/company/company-01.jpg',
+    'Ενδεικτική εικόνα τράκτορα': 'img/company/company-03.jpg',
+    'Ενδεικτική εικόνα επικαθήμενου': 'img/company/company-07.jpg',
+    'Ενδεικτική εικόνα μηχανήματος έργου': 'img/company/company-06.jpg'
   };
   document.querySelectorAll('img[alt]').forEach(function (image) {
     var truckImage = truckImageByAlt[image.getAttribute('alt') || ''];
@@ -161,7 +161,7 @@
       title: 'DAF CF 480 HARDOX',
       price: '1 €',
       meta: ['2004', '485.000 km', '480 hp', '4 άξονες'],
-      image: 'img/hero-fleet.png',
+      image: 'img/company/company-02.jpg',
       href: 'https://afoitsoroumoglou.car.gr/classifieds/view/56647002/',
       linkLabel: 'Άνοιγμα αγγελίας'
     },
@@ -171,7 +171,7 @@
       title: 'Volvo FH 16 550 Euro 6',
       price: '1 €',
       meta: ['2018', '550.000 km', '550 hp', '2 άξονες'],
-      image: 'img/about.jpg',
+      image: 'img/company/company-05.jpg',
       href: 'https://afoitsoroumoglou.car.gr/semitrucks/',
       linkLabel: 'Άνοιγμα κατηγορίας'
     },
@@ -181,7 +181,7 @@
       title: 'MAN TGX Euro 6D',
       price: '1 €',
       meta: ['2021', '480.000 km', '470 hp', '2 άξονες'],
-      image: 'img/hero-fleet.png',
+      image: 'img/company/company-03.jpg',
       href: 'https://afoitsoroumoglou.car.gr/semitrucks/',
       linkLabel: 'Άνοιγμα κατηγορίας'
     },
@@ -191,18 +191,8 @@
       title: 'CAT M318D',
       price: '1 €',
       meta: ['2012', '8.900 ώρες', '177 hp', 'Πετρέλαιο'],
-      image: 'img/hero-fleet.png',
+      image: 'img/company/company-06.jpg',
       href: 'https://afoitsoroumoglou.car.gr/classifieds/view/44448622/',
-      linkLabel: 'Άνοιγμα αγγελίας'
-    },
-    {
-      category: 'Μηχανήματα έργων',
-      icon: 'fas fa-tools',
-      title: 'JCB κουβάδες',
-      price: '1 €',
-      meta: ['2008', 'Μεταχειρισμένο', 'Εξάρτημα', 'JCB'],
-      image: 'img/autoroad/car-5.jpg',
-      href: 'https://afoitsoroumoglou.car.gr/classifieds/view/54948527/',
       linkLabel: 'Άνοιγμα αγγελίας'
     },
     {
@@ -211,7 +201,7 @@
       title: 'Mercedes-Benz 1619',
       price: '1 €',
       meta: ['1996', '600.000 km', '190 hp', '2 άξονες'],
-      image: 'img/about.jpg',
+      image: 'img/company/company-11.jpg',
       href: 'https://www.car.gr/classifieds/trucks/view/56260636-fortigo-anw-twn-75t-anatropi-mercedes-benz?lang=el',
       linkLabel: 'Άνοιγμα αγγελίας'
     },
@@ -221,7 +211,7 @@
       title: 'Scania 94D 310',
       price: '1 €',
       meta: ['2004', '700.000 km', '300 hp', '2 άξονες'],
-      image: 'img/autoroad/car-2.jpg',
+      image: 'img/company/company-01.jpg',
       href: 'https://afoitsoroumoglou.car.gr/classifieds/view/54775957/',
       linkLabel: 'Άνοιγμα αγγελίας'
     }
@@ -234,7 +224,7 @@
       title: 'Κατηγορία επικαθήμενων',
       price: 'Live στο car.gr',
       meta: ['Δημόσια κατηγορία', 'Μεταφορά', 'Ενημέρωση online', 'Χωρίς τιμή εδώ'],
-      image: 'img/hero-fleet.png',
+      image: 'img/company/company-07.jpg',
       href: 'https://afoitsoroumoglou.car.gr/semitrailers/',
       linkLabel: 'Άνοιγμα κατηγορίας',
       tag: 'LIVE ΚΑΤΗΓΟΡΙΑ',
@@ -246,7 +236,7 @@
       title: 'Κατηγορία εργοταξιακού εξοπλισμού',
       price: 'Live στο car.gr',
       meta: ['Δημόσια κατηγορία', 'Εργοτάξιο', 'Ενημέρωση online', 'Χωρίς τιμή εδώ'],
-      image: 'img/hero-fleet.png',
+      image: 'img/company/company-06.jpg',
       href: 'https://afoitsoroumoglou.car.gr/builders/',
       linkLabel: 'Άνοιγμα κατηγορίας',
       tag: 'LIVE ΚΑΤΗΓΟΡΙΑ',
@@ -258,7 +248,7 @@
       title: 'Όλες οι δημόσιες κατηγορίες',
       price: 'Live στο car.gr',
       meta: ['Dealer profile', 'Φορτηγά', 'Τράκτορες', 'Μηχανήματα'],
-      image: 'img/about.jpg',
+      image: 'img/company/company-02.jpg',
       href: 'https://afoitsoroumoglou.car.gr/',
       linkLabel: 'Άνοιγμα dealer profile',
       tag: 'DEALER PROFILE',
