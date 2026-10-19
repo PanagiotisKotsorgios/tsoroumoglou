@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.playwright-mcp/
+.chrome-cookie-check/
+.chrome-cookie-check-2/
+*.tsbuildinfo
+vite.config.d.ts
+company-gallery-root.png
+cookie-banner-root.png
