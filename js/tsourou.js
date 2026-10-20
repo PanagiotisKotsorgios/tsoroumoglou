@@ -516,58 +516,6 @@
     node.textContent = String(new Date().getFullYear());
   });
 
-  /* Homepage welcome popup with accessible close controls and focus return. */
-  var introModal = document.querySelector('[data-intro-modal]');
-  if (introModal) {
-    var introCloseButtons = Array.prototype.slice.call(introModal.querySelectorAll('[data-intro-close]'));
-    var introPreviousFocus = null;
-    var introIsOpen = false;
-    var introHasBeenSeen = false;
-    try { introHasBeenSeen = window.sessionStorage.getItem('ts-intro-seen') === '1'; } catch (error) { introHasBeenSeen = false; }
-
-    var introSetOpen = function (isOpen) {
-      introIsOpen = isOpen;
-      introModal.classList.toggle('is-open', isOpen);
-      introModal.setAttribute('aria-hidden', String(!isOpen));
-      document.body.classList.toggle('intro-modal-open', isOpen);
-      if (isOpen) {
-        introPreviousFocus = document.activeElement;
-        window.setTimeout(function () {
-          var closeButton = introModal.querySelector('.intro-modal-close');
-          if (closeButton) closeButton.focus();
-        }, 40);
-      } else {
-        try { window.sessionStorage.setItem('ts-intro-seen', '1'); } catch (error) { /* session storage may be unavailable */ }
-        if (introPreviousFocus && typeof introPreviousFocus.focus === 'function') introPreviousFocus.focus();
-      }
-    };
-
-    introCloseButtons.forEach(function (button) {
-      button.addEventListener('click', function () { introSetOpen(false); });
-    });
-    document.addEventListener('keydown', function (event) {
-      if (!introIsOpen) return;
-      if (event.key === 'Escape') {
-        event.preventDefault();
-        introSetOpen(false);
-        return;
-      }
-      if (event.key !== 'Tab') return;
-      var focusable = Array.prototype.slice.call(introModal.querySelectorAll('a[href], button:not([tabindex="-1"])'));
-      if (!focusable.length) return;
-      var first = focusable[0];
-      var last = focusable[focusable.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
-    });
-    if (!introHasBeenSeen) window.setTimeout(function () { introSetOpen(true); }, 520);
-  }
-
   /*
    * Site-wide entrance motion. Elements remain visible if JavaScript fails,
    * while the enhanced layer adds restrained load and scroll reveals.
